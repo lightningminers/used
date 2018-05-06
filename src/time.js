@@ -1,6 +1,17 @@
 const PARSE = /^(\d{4})-?(\d{2})-?(\d{1,2})$/
 const FORMAT_DEFAULT = 'YYYY-MM-DD hh:mm:ss'
 const FORMAT_PARSE = /Y{2,4}|M{1,4}|D{1,2}|d{1,4}|H{1,2}|h{1,2}|a|A|m{1,2}|s{1,2}|Z{1,2}/g
+const SECONDS = 1;
+const MINUTE = SECONDS * 60;
+const HOUR = MINUTE * 60;
+const DAY = HOUR * 24;
+const WEEK = DAY * 7;
+const MILLISECONDS = 1000;
+const MILLISECONDS_MINUTE = MINUTE * MILLISECONDS;
+const MILLISECONDS_HOUR = HOUR * MILLISECONDS;
+const MILLISECONDS_DAY = DAY * MILLISECONDS;
+const MILLISECONDS_WEEK = WEEK * MILLISECONDS;
+
 
 function parseCF(c){
   if (c === null){
@@ -40,36 +51,8 @@ class Time{
     this.hmss = this.dateObj.getMilliseconds(); //毫秒
   }
 
-  year(){
-    return this.y;
-  }
-
-  month(){
-    return this.m;
-  }
-
-  day(){
-    return this.d;
-  }
-
-  dayOfTheWeek(){
-    return this.w;
-  }
-
-  hour(){
-    return this.h;
-  }
-
-  miunte(){
-    return this.hm;
-  }
-
-  second(){
-    return this.hms;
-  }
-
-  milliSecond(){
-    return this.hmss;
+  isValid(){
+    return this.dateObj.toString() !== 'Invalid Date';
   }
 
   unix(){
@@ -78,6 +61,10 @@ class Time{
 
   valueOf(){
     return this.dateObj.getTime();
+  }
+
+  clone(){
+    return new Time(this)
   }
 
   format(str){
@@ -105,4 +92,52 @@ class Time{
       }
     });
   }
+
+  add(number, units){
+    let step;
+    switch(units){
+      case 'm':
+      case 'minute':
+        step = MILLISECONDS_MINUTE;
+        break
+      case 'h':
+      case 'hour':
+        step = MILLISECONDS_HOUR;
+        break
+      case 'd':
+      case 'day':
+        step = MILLISECONDS_DAY;
+        break
+      case 'w':
+      case 'week':
+        step = MILLISECONDS_WEEK;
+        break
+      default:
+        step = MILLISECONDS
+    }
+    const next = this.valueOf() + (number * step);
+    return new Time(next);
+  }
+
+  subtract(number, units){
+    return this.add(number * -1, units);
+  }
+
+  toJSON(){
+    return {
+      'years': this.y,
+      'months': this.m,
+      'date': this.d,
+      'hours': this.h,
+      'minutes': this.hm,
+      'seconds': this.hms,
+      'milliseconds': this.hmss
+    }
+  }
+
+  toJSONString(){
+    return JSON.stringify(this.toJSON());
+  }
 }
+
+export default Time;
