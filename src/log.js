@@ -1,3 +1,7 @@
+/**
+ * 日志
+ */
+
 const LOG = 'LOG';
 const INFO = 'INFO';
 const WARNING = 'WARNING';
