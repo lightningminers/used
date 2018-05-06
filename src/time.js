@@ -93,8 +93,30 @@ class Time{
     });
   }
 
+  set(number, units){
+    const d = this.clone();
+    switch(units){
+      case 'Y':
+      case 'year':
+        d.dateObj.setFullYear(number);
+        break;
+      case 'M':
+      case 'month':
+        d.dateObj.setMonth(number);
+        break;
+    }
+    d.init();
+    return d;
+  }
+
   add(number, units){
     let step;
+    if (['M', 'month'].indexOf(units) > -1){
+      return this.set(number, units);
+    }
+    if (['Y', 'year'].indexOf(units) > -1){
+      return this.set(number, units);
+    }
     switch(units){
       case 'm':
       case 'minute':
@@ -137,6 +159,30 @@ class Time{
 
   toJSONString(){
     return JSON.stringify(this.toJSON());
+  }
+
+  toDateObj(){
+    return this.dateObj;
+  }
+
+  isLeapYear(){
+    return (0 == this.y%4 && (this.y%100 !=0 || this.y%400 == 0))
+  }
+
+  isBefore(s){
+    return this.valueOf() < s.valueOf();
+  }
+
+  isAfter(s){
+    return this.valueOf() > s.valueOf();
+  }
+
+  isSame(s){
+    return this.valueOf() === s.valueOf();
+  }
+
+  daysInMonth(y, m){
+    return new Date(y !== undefined ? y : this.y, m !== undefined ? m : this.m, 0).getDate();
   }
 }
 

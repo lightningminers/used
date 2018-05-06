@@ -15,6 +15,9 @@ console.log('t_f', t_f)
 console.log('t_h', t_h)
 console.log('t_y', t_y)
 
+const M = time.add(2019,'Y').format()
+console.log(M);
+
 const query = {
   id: 1234,
   name: ['你好', '你好']
