@@ -1,0 +1,33 @@
+{
+  "name": "browser-used",
+  "version": "0.1.0",
+  "description": "Util Function",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d lib --copy-files --source-maps && webpack && NODE_ENV=pro webpack",
+    "es": "babel src --watch -d lib --copy-files --source-maps",
+    "umd": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/icepy/used.git"
+  },
+  "keywords": [],
+  "author": "icepy",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/icepy/used/issues"
+  },
+  "homepage": "https://github.com/icepy/used#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.0",
+    "chai": "^3.5.0",
+    "glob": "^7.1.1",
+    "mocha": "^3.3.0",
+    "webpack": "^3.8.1"
+  }
+}
