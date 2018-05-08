@@ -71,7 +71,7 @@ time.clone()
 
 支持解析和`format`一个符合URL规则的URL
 
-#### 解析
+#### parse
 
 将一个URL的查询字符串序列化成JSON对象，并且支持获取特定key的value。
 
@@ -100,7 +100,7 @@ console.log(_websiteUrl)
 
 处理查询字符串解析和反序列化成字符串，所有的value支持编码解码
 
-#### 解析
+#### parse
 
 使用`parse`将一个符合标准的URL查询字符串，序列化成JSON对象
 
