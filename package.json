@@ -4,7 +4,7 @@
   "description": "Util Function",
   "main": "lib/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "node __test__/test.js",
     "build": "babel src -d lib --copy-files --source-maps && webpack && NODE_ENV=pro webpack",
     "es": "babel src --watch -d lib --copy-files --source-maps",
     "umd": "webpack"
