@@ -47,6 +47,17 @@ import querystring from 'browser-used/lib/querystring' // 仅引用querystring�
 - Unix 时间戳，如: `new Time(1525793309344)`
 - Date对象，如: `new Time(new Date())`
 
+#### Time Property
+
+- `y` 年
+- `m` 月
+- `d` 日
+- `w` 星期几
+- `h` 小时
+- `hm` 分钟
+- `hms` 秒
+- `hmss` 毫秒
+ 
 #### Time Method
 
 - `isValid` return Boolean
@@ -54,8 +65,7 @@ import querystring from 'browser-used/lib/querystring' // 仅引用querystring�
 `isValid` 检查当前的`Time`对象是否是一个有效的时间对象。
 
 ```JavaScript
-const time = new Time()
-time.isValid()
+time().isValid()
 ```
 
 - `clone` return Time Object
@@ -63,9 +73,58 @@ time.isValid()
 `clone` 返回一个包含当前对象的拷贝
 
 ```JavaScript
-const time = new Time()
-time.clone()
+time().clone()
 ```
+
+- `unix` return number
+
+`unix` 返回Unix时间戳（秒）
+
+- `valueOf` return number
+
+`valueOf` 返回Unix时间戳（毫秒）
+
+- `format` return string
+
+`format` 格式化日期
+
+```JavaScript
+time().format('YYYY-MM')
+time().format('hh:mm:ss')
+```
+
+转换格式如下：
+
+| Format | Output | Description |
+| ------ | ------ | ----------- |
+| `YYYY` | 2018 | 四位数的年份 |
+| `MM` | 01-12 | 月份，数字前面加上0 |
+| `DD` | 01-31 | 月份里的一天，数字前面加上0 |
+| `hh` | 00-23 | 小时，数字前面加上0 |
+| `mm` | 00-59 | 分钟，数字前面加上0 |
+| `ss` | 00-59 | 秒，数字前面加上0 |
+| `a` | 'am' 'pm' | 12时制转换日期格式小写 |
+| `A` | 'AM' 'PM' | 12时制转换日期格式大写 |
+
+- `isBefore` return Boolean
+
+`isBefore` 检查一个`Time`对象是否在另一个`Time`对象的时间之前
+
+```JavaScript
+time().isBefore(time())
+```
+
+- `isAfter` return Boolean
+
+`isAfter` 检查一个`Time`对象是否在另一个`Time`对象的时间之后
+
+```JavaScript
+time().isAfter(time())
+```
+
+- `isSame` return Boolean
+
+`isSame` 检查一个`Time`对象是否与另外一个`Time`对象时间相同
 
 ### 处理URL
 

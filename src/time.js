@@ -186,4 +186,6 @@ class Time{
   }
 }
 
-export default Time;
+export default function time(c){
+  return new Time(c);
+};

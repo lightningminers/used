@@ -209,7 +209,7 @@ exports.default = {
   url: _url2.default,
   querystring: _querystring2.default,
   log: _log2.default,
-  Time: _time2.default
+  time: _time2.default
 };
 
 /***/ }),
@@ -355,6 +355,8 @@ Object.defineProperty(exports, "__esModule", {
 });
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+exports.default = time;
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -570,7 +572,9 @@ var Time = function () {
   return Time;
 }();
 
-exports.default = Time;
+function time(c) {
+  return new Time(c);
+};
 
 /***/ })
 /******/ ]);

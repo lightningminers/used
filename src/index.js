@@ -1,11 +1,11 @@
 import url from './url';
 import querystring from './querystring';
 import log from './log';
-import Time from './time';
+import time from './time';
 
 export default{
   url,
   querystring,
   log,
-  Time
+  time
 }

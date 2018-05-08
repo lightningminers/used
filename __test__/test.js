@@ -3,19 +3,19 @@ const {
   url,
   querystring,
   log,
-  Time
+  time
 } = Used;
 
-const time = new Time();
-const t_f = time.format();
-const t_y = time.format('YYYY-MM')
-const t_h = time.format('hh:mm:ss')
+const t = time()
+const t_f = t.format();
+const t_y = t.format('YYYY-MM')
+const t_h = t.format('hh:mm:ss')
 
 console.log('t_f', t_f)
 console.log('t_h', t_h)
 console.log('t_y', t_y)
 
-const M = time.add(2019,'Y').format()
+const M = t.add(2019,'Y').format()
 console.log(M);
 
 const query = {
