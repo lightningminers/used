@@ -1,3 +1,4 @@
+[![Build Status](https://www.travis-ci.org/icepy/used.svg?branch=master)](https://www.travis-ci.org/icepy/used)
 
 > Used.js是一个轻量级小巧的可运行在浏览器中的JavaScript函数库，除个别外大部分的使用方式与Node.js API保持一致。
 
@@ -5,7 +6,7 @@
 - 可按需载入
 - 丰富的API
 - 提高开发效率
-- 全浏览器兼容
+- 全浏览器兼容
 
 ## 安装
 
@@ -36,6 +37,36 @@ import querystring from 'browser-used/lib/querystring' // 仅引用querystring�
 ## API
 
 ---
+
+### 处理时间
+
+初始化一个`Time`支持多种传入参数的方式：
+
+- 无参数，将得到一个包含当前时间和日期的`time`对象
+- 标准的ISO 8601时间字符串，如: `new Time('2018-05-04')`
+- Unix 时间戳，如: `new Time(1525793309344)`
+- Date对象，如: `new Time(new Date())`
+
+#### Time Method
+
+- `isValid` return Boolean
+
+`isValid` 检查当前的`Time`对象是否是一个有效的时间对象。
+
+```JavaScript
+const time = new Time()
+time.isValid()
+```
+
+- `clone` return Time Object
+
+`clone` 返回一个包含当前对象的拷贝
+
+```JavaScript
+const time = new Time()
+time.clone()
+```
+
 ### 处理URL
 
 支持解析和`format`一个符合URL规则的URL
@@ -91,8 +122,6 @@ const query = {
 const wu = querystring.stringify(query)
 console.log(wu)
 ```
-
-### 处理时间
 
 ### 日志
 
