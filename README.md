@@ -4,7 +4,7 @@
 
 - 更轻量小巧
 - 可按需载入
-- 丰富的API
+- 丰富的API
 - 提高开发效率
 - 全浏览器兼容
 
@@ -24,7 +24,7 @@ $ npm i browser-used --save
 
 ## 开始
 
-> 文档说明以NPM的方式来使用如果
+>文档说明以NPM的方式来使用如果
 
 ```JavaScript
 import Used from 'browser-used' // 全引用
@@ -67,7 +67,7 @@ const time = new Time()
 time.clone()
 ```
 
-### 处理URL
+### 处理URL
 
 支持解析和`format`一个符合URL规则的URL
 
