@@ -28,7 +28,7 @@ $ npm i browser-used --save
 
 ```JavaScript
 import Used from 'browser-used' // 全引用
-import Time from 'browser-used/lib/time' //仅引用Time模块
+import Time from 'browser-used/lib/time' // 仅引用Time模块
 import querystring from 'browser-used/lib/querystring' // 仅引用querystring模块
 ```
 
@@ -43,9 +43,9 @@ import querystring from 'browser-used/lib/querystring' // 仅引用querystring�
 初始化一个`Time`支持多种传入参数的方式：
 
 - 无参数，将得到一个包含当前时间和日期的`time`对象
-- 标准的ISO 8601时间字符串，如: `new Time('2018-05-04')`
-- Unix 时间戳，如: `new Time(1525793309344)`
-- Date对象，如: `new Time(new Date())`
+- 标准的ISO 8601时间字符串，如: `time('2018-05-04')`
+- Unix 时间戳，如: `time(1525793309344)`
+- Date对象，如: `time(new Date())`
 
 #### Time Property
 
@@ -126,6 +126,14 @@ time().isAfter(time())
 
 `isSame` 检查一个`Time`对象是否与另外一个`Time`对象时间相同
 
+- `isLeapYear` return Boolean
+
+`isLeapYear` 判断闰年
+
+- `daysInMonth` return number
+
+`daysInMonth` 返回某年某月有多少天
+
 ### 处理URL
 
 支持解析和`format`一个符合URL规则的URL
@@ -184,3 +192,17 @@ console.log(wu)
 
 ### 日志
 
+良好的日志系统可以在排错方面给予效率，`log`提供了良好的区分以及格式化输出。
+
+```JavaScript
+  const logger = log.log;
+  const LogType = log.LogType;
+
+  logger(['123456'])
+  logger(['error'], LogType.ERROR)
+  logger(['waring'], LogType.WARNING)
+  logger(['info'], LogType.INFO)
+```
+
+- `log` 函数
+- `LogType` 常量定义了LOG ERROR WARNING INFO 四个等级
