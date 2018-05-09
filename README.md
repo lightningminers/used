@@ -28,17 +28,17 @@ $ npm i browser-used --save
 
 ```JavaScript
 import Used from 'browser-used' // 全引用
-import Time from 'browser-used/lib/time' // 仅引用Time模块
+import Time from 'browser-used/lib/time' // 仅引用Time模块
 import querystring from 'browser-used/lib/querystring' // 仅引用querystring模块
 ```
 
 大部分的模块主要针对`lodash.js`未提供但又常用到的一些函数，并且支持按需载入，个别模块如`Time`的使用和 Moment.js 的API，用法相同， **（保证和热门库使用体验一致）** 无学习成本。
 
-## API
+# API
 
----
+若有不当之处，请指出；
 
-### 处理时间
+## 处理时间
 
 初始化一个`Time`支持多种传入参数的方式：
 
@@ -155,7 +155,7 @@ console.log(M);
 | `m` | 分钟 | 
 
 
-### 处理URL
+## 处理URL
 
 支持解析和`format`一个符合URL规则的URL
 
@@ -184,7 +184,7 @@ const _websiteUrl = url.format('https://github.com/icepy',{
 console.log(_websiteUrl)
 ```
 
-### 处理查询字符串
+## 处理查询字符串
 
 处理查询字符串解析和反序列化成字符串，所有的value支持编码解码
 
@@ -211,7 +211,7 @@ const wu = querystring.stringify(query)
 console.log(wu)
 ```
 
-### 日志
+## 日志
 
 良好的日志系统可以在排错方面给予效率，`log`提供了良好的区分以及格式化输出。
 
@@ -227,3 +227,37 @@ console.log(wu)
 
 - `log` 函数
 - `LogType` 常量定义了LOG ERROR WARNING INFO 四个等级
+
+## Cookie
+
+创建一个cookie应用于整个网站：
+
+```JavaScript
+cookie.set('name', 'icepy')
+```
+
+创建一个从现在起7天过期的cookie应用于整个网站：
+
+```JavaScript
+cookie.set('name', 'icepy', { expires:7 })
+```
+
+获取一个key=name的cookie：
+
+```JavaScript
+cookie.get('name')
+```
+
+获取所有的cookie：
+
+```JavaScript
+cookie.get()
+```
+
+删除一个key=name的cookie：
+
+```JavaScript
+cookie.remove('name')
+```
+
+> ⚠️注意：删除不存在的cookie不会引发任何异常，也不会有返回值，在删除cookie时最正确的处理方式是将设置cookie时完整的路径和域属性都传递进来。
