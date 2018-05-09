@@ -24,7 +24,7 @@ $ npm i browser-used --save
 
 ## 开始
 
->文档说明以NPM的方式来使用如果
+>文档说明以NPM的方式来使用进行
 
 ```JavaScript
 import Used from 'browser-used' // 全引用
