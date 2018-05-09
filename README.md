@@ -134,6 +134,27 @@ time().isAfter(time())
 
 `daysInMonth` 返回某年某月有多少天
 
+- `add` return new Time()
+
+`add` 提供了操作时间的方式
+
+```JavaScript
+const M = t.add(2019,'Y').format()
+console.log(M);
+```
+
+单位格式：
+
+| 单位 | Output |
+| ------ | ------ |
+| `Y` | 年 | 
+| `M` | 月 | 
+| `w` | 周 | 
+| `d` | 天 | 
+| `h` | 小时 | 
+| `m` | 分钟 | 
+
+
 ### 处理URL
 
 支持解析和`format`一个符合URL规则的URL
