@@ -261,3 +261,17 @@ cookie.remove('name')
 ```
 
 > ⚠️注意：删除不存在的cookie不会引发任何异常，也不会有返回值，在删除cookie时最正确的处理方式是将设置cookie时完整的路径和域属性都传递进来。
+
+## 环境变量
+
+用于程序本身判断自己所运行的环境，主要支持`Browser`，`Node.js`，`Weex`，全部的常量返回一个`Boolean`。
+
+- `inBrowser` 是否在浏览器中
+- `inWeex` 是否在Weex中
+- `inNodeJS` 是否在Node.js中
+- `isIE` 是否是IE
+- `isIE9` 是否是IE9
+- `isEdge` 是否是Edge
+- `isAndroid` 是否是Android（浏览器或Weex）
+- `isiOS` 是否是iOS（浏览器或Weex）
+- `isChrome` 是否是Chrome
