@@ -211,6 +211,10 @@ var _env = __webpack_require__(6);
 
 var _env2 = _interopRequireDefault(_env);
 
+var _parseUrl = __webpack_require__(8);
+
+var _parseUrl2 = _interopRequireDefault(_parseUrl);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 exports.default = {
@@ -219,7 +223,8 @@ exports.default = {
   log: _log2.default,
   time: _time2.default,
   cookie: _cookie2.default,
-  env: _env2.default
+  env: _env2.default,
+  parseUrl: _parseUrl2.default
 };
 
 /***/ }),
@@ -743,6 +748,33 @@ try {
 
 module.exports = g;
 
+
+/***/ }),
+/* 8 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = parseUrl;
+var urlReg = /^(?:([A-Za-z]+):)?(\/{0,3})([0-9.\-A-Za-z]+)(?::(\d+))?(?:\/([^?#]*))?(?:\?([^#]*))?(?:#(.*))?$/;
+var blanks = '       ';
+var fields = ['url', 'scheme', 'slash', 'host', 'port', 'path', 'query', 'hash'];
+
+function parseUrl(url, parseQueryString) {
+  var result = urlReg.exec(url);
+  var obj = Object.create(null);
+  fields.forEach(function (field, i) {
+    obj[field] = result[i];
+  });
+  if (typeof parseQueryString === 'string') {
+    return obj[parseQueryString];
+  }
+  return obj;
+}
 
 /***/ })
 /******/ ]);
