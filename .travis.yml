@@ -8,4 +8,5 @@ cache:
 before_install:
     - npm install
 script:
+  - npm build
   - npm test
