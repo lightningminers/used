@@ -8,6 +8,13 @@
 - 提高开发效率
 - 全浏览器兼容
 
+## 编译
+
+```bash
+$ yarn
+$ npm run build
+```
+
 ## 安装
 
 可以用两种方式来使用Used.js:
@@ -38,7 +45,7 @@ import querystring from 'browser-used/lib/querystring' // 仅引用querystring�
 
 若有不当之处，请指出；
 
-## 处理时间
+## Time
 
 初始化一个`Time`支持多种传入参数的方式：
 
@@ -155,7 +162,7 @@ console.log(M);
 | `m` | 分钟 | 
 
 
-## 处理URL
+## url
 
 支持解析和`format`一个符合URL规则的URL
 
@@ -184,7 +191,7 @@ const _websiteUrl = url.format('https://github.com/icepy',{
 console.log(_websiteUrl)
 ```
 
-## 处理查询字符串
+## querystring
 
 处理查询字符串解析和反序列化成字符串，所有的value支持编码解码
 
@@ -211,7 +218,7 @@ const wu = querystring.stringify(query)
 console.log(wu)
 ```
 
-## 日志
+## log
 
 良好的日志系统可以在排错方面给予效率，`log`提供了良好的区分以及格式化输出。
 
@@ -262,7 +269,7 @@ cookie.remove('name')
 
 > ⚠️注意：删除不存在的cookie不会引发任何异常，也不会有返回值，在删除cookie时最正确的处理方式是将设置cookie时完整的路径和域属性都传递进来。
 
-## 环境变量
+## env
 
 用于程序本身判断自己所运行的环境，主要支持`Browser`，`Node.js`，`Weex`，全部的常量返回一个`Boolean`。
 
