@@ -282,3 +282,19 @@ cookie.remove('name')
 - `isAndroid` 是否是Android（浏览器或Weex）
 - `isiOS` 是否是iOS（浏览器或Weex）
 - `isChrome` 是否是Chrome
+
+## parseUrlToLocation
+
+用于解析字符串URL，如：`https://github.com/icepy?id=1234/#hash`
+
+```JavaScript
+{
+  "url":"https://github.com/icepy?id=1234/#hash",
+  "scheme":"https",
+  "slash":"//",
+  "host":"github.com",
+  "path":"icepy",
+  "query":"id=1234/",
+  "hash":"hash"
+}
+```

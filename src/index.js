@@ -4,7 +4,7 @@ import log from './log';
 import time from './time';
 import cookie from './cookie';
 import env from './env';
-import parseUrl from './parseUrl';
+import parseUrlToLocation from './parseUrlToLocation';
 
 export default{
   url,
@@ -13,5 +13,5 @@ export default{
   time,
   cookie,
   env,
-  parseUrl
+  parseUrlToLocation
 }
