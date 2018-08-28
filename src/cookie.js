@@ -64,18 +64,19 @@ function cookieHandler(key, value, attributes){
   }
 }
 
-module.exports = {
-  get(key){
-    return cookieHandler(key);
-  },
-  getJSON(key){
-    return cookieHandler(key, 'json');
-  },
-  set(key, value, attributes={}){
-    return cookieHandler(key, value, attributes);
-  },
-  remove(key, attributes={}){
-    attributes.expires = -1;
-    return cookieHandler(key, '', attributes)
-  }
+export function get(key) {
+  return cookieHandler(key);
+}
+
+export function getJSON(key){
+  return cookieHandler(key, 'json');
+}
+
+export function set(key, value, attributes={}){
+  return cookieHandler(key, value, attributes);
+}
+
+export function remove(key, attributes={}){
+  attributes.expires = -1;
+  return cookieHandler(key, '', attributes)
 }

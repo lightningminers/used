@@ -1,6 +1,6 @@
 {
   "name": "browser-used",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "Used.js是一个轻量级小巧的可运行在浏览器中的JavaScript函数库",
   "main": "lib/index.js",
   "scripts": {
@@ -29,5 +29,6 @@
     "glob": "^7.1.1",
     "mocha": "^3.3.0",
     "webpack": "^3.8.1"
-  }
+  },
+  "types": "index.d.ts"
 }

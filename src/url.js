@@ -1,11 +1,11 @@
-import querystring from './querystring';
+import * as querystring from './querystring';
 
-function format(url, query){
+export function format(url, query){
   let search = querystring.stringify(query);
   return url + '?' + search;
 }
 
-function parse(url,parseQueryString){
+export function parse(url,parseQueryString){
   let location = {
     hash: null,
     search: null
@@ -31,9 +31,4 @@ function parse(url,parseQueryString){
   } else {
     return query;
   }
-}
-
-export default {
-  format,
-  parse
 }

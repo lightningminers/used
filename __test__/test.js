@@ -1,9 +1,10 @@
 const Used = require('../umd/index').default
+console.log(Used);
 const {
   url,
   querystring,
   log,
-  time,
+  date,
   cookie,
   env
 } = Used;
@@ -17,7 +18,7 @@ const env_test = require('./env_test');
 
 log_test(log)
 querystring_test(querystring)
-time_test(time)
+time_test(date.time)
 url_test(url)
 cookie_test(cookie)
 env_test(env);

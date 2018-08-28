@@ -7,7 +7,7 @@ const INFO = 'INFO';
 const WARNING = 'WARNING';
 const ERROR = 'ERROR';
 
-const LogType = {
+export const LogType = {
   LOG,
   INFO,
   WARNING,
@@ -15,8 +15,8 @@ const LogType = {
 }
 
 function fillZore(str) {
-    const res = '00' + str;
-    return res.substring(res.length - 2);
+  const res = '00' + str;
+  return res.substring(res.length - 2);
 }
 
 let logChannel = (logData) => {
@@ -41,20 +41,14 @@ let logChannel = (logData) => {
   }
 };
 
-const setLog = (fn) => {
-    logChannel = fn;
+export const setLog = (fn) => {
+  logChannel = fn;
 };
 
-const log = (logArr, type = LogType.LOG) => {
+export const log = (logArr, type = LogType.LOG) => {
   logChannel({
     type,
     logArr,
     time: new Date(),
   });
 };
-
-export default {
-  log,
-  setLog,
-  LogType
-}
