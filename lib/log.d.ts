@@ -7,6 +7,6 @@ interface ILogType {
 
 declare module "browser-used/lib/log" {
   export function setLog(fn: Function): void;
-  export function log(logArr: string[], type: string): void;
+  export function log(logArr: any[], type?: string): void;
   export var LogType: ILogType;
 }
