@@ -1,8 +1,8 @@
-function decode(s){
+function decode(s: string): string{
   return s.replace(/(%[0-9A-Z]{2})+/g, decodeURIComponent);
 }
 
-function cookieHandler(key, value, attributes){
+function cookieHandler(key: string, value?: any, attributes?: any){
   if (!document){
     return new Error('Not Found document')
   }
@@ -64,19 +64,22 @@ function cookieHandler(key, value, attributes){
   }
 }
 
-export function get(key) {
+export function get(key: string) {
   return cookieHandler(key);
 }
 
-export function getJSON(key){
+export function getJSON(key: string){
   return cookieHandler(key, 'json');
 }
 
-export function set(key, value, attributes={}){
+export function set(key: string, value: any, attributes={}){
   return cookieHandler(key, value, attributes);
 }
 
-export function remove(key, attributes={}){
-  attributes.expires = -1;
+export function remove(key: string, attributes?: any){
+  if (attributes){
+    attributes = Object.create(null);
+    attributes.expires = -1;
+  }
   return cookieHandler(key, '', attributes)
 }

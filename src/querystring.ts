@@ -1,4 +1,4 @@
-export function parse(qs, sep, eq){
+export function parse(qs: string, sep?: string, eq?: string): any{
   const obj = Object.create(null);
   if (typeof qs !== 'string' || qs.length === 0 ){
     return obj;
@@ -43,7 +43,7 @@ export function parse(qs, sep, eq){
   return obj;
 }
 
-export function stringify(obj, sep, eq){
+export function stringify(obj: any, sep?: string, eq?: string): string{
   sep = sep || '&';
   eq = eq || '=';
   if (obj !== null && typeof obj === 'object'){

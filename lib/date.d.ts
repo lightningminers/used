@@ -1,5 +1,5 @@
 
-declare class Time {
+export declare class Time {
   constructor(c: any);
   isValid(): boolean;
   unix(): number;
@@ -9,6 +9,5 @@ declare class Time {
 }
 
 declare module "browser-used/lib/time" {
-  export function time(c: any): void;
-  export var Time = Time;
+  export function time(c: any): Time;
 }

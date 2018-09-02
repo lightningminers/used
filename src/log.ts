@@ -1,25 +1,22 @@
-/**
- * 日志
- */
-
-const LOG = 'LOG';
-const INFO = 'INFO';
-const WARNING = 'WARNING';
-const ERROR = 'ERROR';
-
-export const LogType = {
-  LOG,
+export enum LogType {
+  LOG = 0,
   INFO,
   WARNING,
-  ERROR
+  ERROR,
 }
 
-function fillZore(str) {
+interface ILog {
+  type: LogType;
+  logArr: Array<any>;
+  time: Date;
+}
+
+function fillZore(str: number): string {
   const res = '00' + str;
   return res.substring(res.length - 2);
 }
 
-let logChannel = (logData) => {
+let logChannel = (logData: ILog) => {
   const time = fillZore(logData.time.getHours())
       + ':' + fillZore(logData.time.getMinutes())
       + ':' + fillZore(logData.time.getSeconds());
@@ -41,11 +38,11 @@ let logChannel = (logData) => {
   }
 };
 
-export const setLog = (fn) => {
-  logChannel = fn;
+export const setLog = (handler: (logData: ILog) => void) => {
+  logChannel = handler;
 };
 
-export const log = (logArr, type = LogType.LOG) => {
+export const log = (logArr: any[], type = LogType.LOG) => {
   logChannel({
     type,
     logArr,
