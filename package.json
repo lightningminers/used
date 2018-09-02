@@ -4,10 +4,7 @@
   "description": "Used.js是一个轻量级小巧的可运行在浏览器中的JavaScript函数库",
   "main": "lib/index.js",
   "scripts": {
-    "test": "node __test__/test.js",
-    "build": "babel src -d lib --copy-files --source-maps && webpack && NODE_ENV=pro webpack",
-    "es": "babel src --watch -d lib --copy-files --source-maps",
-    "umd": "webpack"
+    "test": "node __test__/test.js"
   },
   "repository": {
     "type": "git",
