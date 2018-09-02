@@ -17,8 +17,6 @@ $ npm run build
 
 ## 安装
 
-可以用两种方式来使用Used.js:
-
 - NPM
 
 ```bash
