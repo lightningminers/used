@@ -25,10 +25,6 @@ $ npm run build
 $ npm i browser-used --save
 ```
 
-- SCRIPT 标签
-
-将`umd`目录中的资源放到任意的CDN中，使用`<script src=""></script>`的方式引入。
-
 ## 开始
 
 >文档说明以NPM的方式来使用进行

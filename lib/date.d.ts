@@ -1,5 +1,5 @@
 
-export declare class Time {
+declare class Time {
   constructor(c: any);
   isValid(): boolean;
   unix(): number;
