@@ -1,11 +1,3 @@
-
-declare enum LogType {
-  LOG = 0,
-  INFO,
-  WARNING,
-  ERROR,
-}
-
 interface ILog {
   type: LogType;
   logArr: Array<any>;

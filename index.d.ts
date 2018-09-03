@@ -31,7 +31,7 @@ interface IDate {
   time: (c: any) => Time;
 }
 
-declare enum IndexLogType {
+declare enum LogType {
   LOG = 0,
   INFO,
   WARNING,
@@ -39,7 +39,7 @@ declare enum IndexLogType {
 }
 
 interface ILog {
-  type: IndexLogType;
+  type: LogType;
   logArr: Array<any>;
   time: Date;
 }
@@ -47,7 +47,7 @@ interface ILog {
 interface ILogger {
   setLog(handler: (logData: ILog) => void): void;
   log(logArr: any[], type?: string): void;
-  LogType: IndexLogType;
+  LogType: LogType;
 }
 
 interface IQueryString {
