@@ -31,7 +31,6 @@ interface IDate {
   time: (c: any) => Time;
 }
 
-
 declare enum LogType {
   LOG = 0,
   INFO,
@@ -46,7 +45,7 @@ interface ILog {
 }
 
 interface ILogger {
-  setLog(fn: (logData: ILog) => void): void;
+  setLog(handler: (logData: ILog) => void): void;
   log(logArr: any[], type?: string): void;
   LogType: LogType;
 }
@@ -61,14 +60,13 @@ interface IUrl {
   parse(url: string, parseQueryString?: string): any;
 }
 
-interface IUsed {
-  env: IEnv;
-  cookie: ICookie;
-  date: IDate;
-  log: ILogger;
-  parseUrlToLocation(url: string, parseQueryString?: string): any;
-  querystring: IQueryString;
-  url: IUrl;
+declare module "browser-used" {
+  export function parseUrlToLocation(url: string, parseQueryString?: string): any;
+  export var env: IEnv;
+  export var url: IUrl;
+  export var querystring: IQueryString;
+  export var log: ILogger;
+  export var date: IDate;
+  export var cookie: ICookie;
 }
 
-export declare var Used: IUsed
