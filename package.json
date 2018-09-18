@@ -1,6 +1,6 @@
 {
   "name": "browser-used",
-  "version": "0.3.3",
+  "version": "0.3.4",
   "description": "Used.js是一个轻量级小巧的可运行在浏览器中的JavaScript函数库",
   "main": "lib/index.js",
   "scripts": {
