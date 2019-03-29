@@ -43,7 +43,10 @@ function appendZero(z: number){
   return z < 10 ? '0' + z : String(z);
 }
 
-export class Time{
+class Time {
+  public static time(c: any): Time {
+    return new Time(c);
+  }
   public dateObj: Date;
   public y: number;
   public m: number;
@@ -212,6 +215,4 @@ export class Time{
   }
 }
 
-export function time(c: any): Time{
-  return new Time(c);
-};
+export default Time;

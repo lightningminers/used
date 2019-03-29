@@ -1,6 +1,8 @@
-[![Build Status](https://www.travis-ci.org/icepy/used.svg?branch=master)](https://www.travis-ci.org/icepy/used)
+# Used.js
 
-> Used.js是一个轻量级小巧的可运行在浏览器中的JavaScript函数库，除个别外大部分的使用方式与Node.js API保持一致。
+[![Build Status](https://www.travis-ci.org/icepy/used.svg?branch=master)](https://www.travis-ci.org/icepy/used) ![img](https://img.shields.io/github/license/icepy/used.svg) ![img](https://img.shields.io/github/last-commit/icepy/used/master.svg)
+
+> Used.js 是一个轻量级小巧的可运行在浏览器中的 JavaScript 函数库，除个别外大部分的使用方式与 Node.js API 保持一致。
 
 - 更轻量小巧
 - 可按需载入
