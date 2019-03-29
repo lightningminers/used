@@ -1,6 +1,6 @@
 {
   "name": "usedjs",
-  "version": "0.3.5",
+  "version": "1.0.0",
   "description": "used.js 是一个轻量级小巧的可运行在浏览器中的 JavaScript 函数库",
   "main": "lib/index.js",
   "scripts": {
