@@ -5,17 +5,18 @@ export function format(url: string, query: any): string{
   return `${url}?${search}`;
 }
 
-export function parse(url: string, parseQueryString?: string): any{
-  let wlocation = {
+export function parse<T = any>(url: string, parseQueryString?: string): T{
+  const wlocation = {
     hash: "",
     search: "",
   };
+  const empty = Object.create(null);
   if (!url){
-    return '';
+    return empty;
   }
   const searchIndex = url.indexOf('?');
   if (searchIndex === -1){
-    return '';
+    return empty;
   }
   const hashIndex = url.indexOf('#');
   if (hashIndex > -1){

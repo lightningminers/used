@@ -1,4 +1,4 @@
-export function parse(qs: string, sep?: string, eq?: string): any{
+export function parse<T = any>(qs: string, sep?: string, eq?: string): T{
   const obj = Object.create(null);
   if (typeof qs !== 'string' || qs.length === 0 ){
     return obj;
