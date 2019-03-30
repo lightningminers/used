@@ -4,6 +4,7 @@ const url = require('../lib/url');
 const logger = require('../lib/log');
 const env = require('../lib/env');
 const cookie = require('../lib/cookie');
+const createUUID = require('../lib/createUUID').default;
 
 /// parseURLString
 const result = parseURLString('https://github.com/icepy/used?id=1234#1')
@@ -62,4 +63,11 @@ console.log('_ga', cookie.getJSON('_ga'))
 console.log('tz', cookie.get('tz'))
 console.log(cookie.get())
 console.log(document.cookie)
+///
+
+/// create uuid
+
+const uuid = createUUID();
+console.log('createUUID: ', uuid);
+
 ///

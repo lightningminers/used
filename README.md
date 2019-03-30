@@ -29,7 +29,7 @@ $ npm i usedjs --save
 
 >文档说明以NPM的方式来使用进行
 
-```JavaScript
+```javascript
 import usedjs from 'usedjs' // 全引用
 import querystring from 'usedjs/lib/querystring' // 仅引用querystring模块
 ```
@@ -69,7 +69,7 @@ const result = parseURLString('https://github.com/icepy/used?id=1234#1')
 
 使用`parse`将一个符合标准的URL查询字符串，序列化成JSON对象
 
-```JavaScript
+```javascript
 const search = 'id=1234&name=你好&name=你好';
 const _wu = querystring.parse(search)
 console.log(_wu)
@@ -83,7 +83,7 @@ $ querystring.parse:  { id: '1234', name: [ '你好', '你好' ] }
 
 使用`stringify`将一组JSON对象，反序列化成URL查询字符串
 
-```JavaScript
+```javascript
 const query = {
   id: 1234,
   name: ['你好', '你好']
@@ -104,7 +104,7 @@ $ querystring.stringify:  id=1234&name=你好&name=你好
 
 将一个 URL 的查询字符串序列化成 JSON 对象，并且支持获取特定 key 的 value。
 
-```JavaScript
+```javascript
 const websiteUrl = 'https://github.com/icepy?id=1234&name=你好&name=你好吧'
 const _query = url.parse(websiteUrl)
 console.log(_query)
@@ -122,7 +122,7 @@ $ url.parse id:  1234
 
 将一组 JSON 对象反序列化成 URL 字符串
 
-```JavaScript
+```javascript
 const _websiteUrl = url.format('https://github.com/icepy',{
   id: 1234,
   name: '你好'
@@ -141,7 +141,7 @@ url.format:  https://github.com/icepy?id=1234&name=你好
 - `log` 函数
 - `LogType` 常量定义了LOG ERROR WARNING INFO 四个等级
 
-```JavaScript
+```javascript
 const log = logger.log
 const LogType = logger.LogType;
 
@@ -191,32 +191,40 @@ $ time:01:26:15 | info:  info
 
 创建一个cookie应用于整个网站：
 
-```JavaScript
+```javascript
 cookie.set('name', 'icepy')
 ```
 
 创建一个从现在起7天过期的cookie应用于整个网站：
 
-```JavaScript
+```javascript
 cookie.set('name', 'icepy', { expires:7 })
 ```
 
 获取一个key=name的cookie：
 
-```JavaScript
+```javascript
 cookie.get('name')
 ```
 
 获取所有的cookie：
 
-```JavaScript
+```javascript
 cookie.get()
 ```
 
 删除一个key=name的cookie：
 
-```JavaScript
+```javascript
 cookie.remove('name')
 ```
 
 > ⚠️注意：删除不存在的cookie不会引发任何异常，也不会有返回值，在删除cookie时最正确的处理方式是将设置cookie时完整的路径和域属性都传递进来。
+
+### createUUID
+
+创建一个 uuid：
+
+```javascript
+
+```
