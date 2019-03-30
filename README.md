@@ -162,28 +162,28 @@ time:01:26:15 | info:  info
 
 用于程序本身判断自己所运行的环境，主要支持 `Browser`，`Node.js`，`Weex`，全部的常量返回一个 `Boolean`。
 
-- `inBrowser` 是否在浏览器中
-- `inWeex` 是否在Weex中
-- `inNodeJS` 是否在Node.js中
-- `isIE` 是否是IE
-- `isIE9` 是否是IE9
-- `isEdge` 是否是Edge
-- `isAndroid` 是否是Android（浏览器或Weex）
-- `isiOS` 是否是iOS（浏览器或Weex）
-- `isChrome` 是否是Chrome
+- `Browser` 是否在浏览器中
+- `Weex` 是否在Weex中
+- `NodeJS` 是否在Node.js中
+- `IE` 是否是IE
+- `IE9` 是否是IE9
+- `Edge` 是否是Edge
+- `Android` 是否是Android（浏览器或Weex）
+- `iOS` 是否是iOS（浏览器或Weex）
+- `Chrome` 是否是Chrome
 
 ```json
 {
-  inBrowser: false,
-  inWeex: false,
+  Browser: false,
+  Weex: false,
   weexPlatform: false,
-  isIE: false,
-  isIE9: false,
-  isEdge: false,
-  isAndroid: false,
-  isiOS: false,
-  isChrome: false,
-  inNodeJS: true,
+  IE: false,
+  IE9: false,
+  Edge: false,
+  Android: false,
+  iOS: false,
+  Chrome: false,
+  NodeJS: true
 }
 ```
 

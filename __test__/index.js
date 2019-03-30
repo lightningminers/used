@@ -6,6 +6,7 @@ const env = require('../lib/env');
 const cookie = require('../lib/cookie');
 const createUUID = require('../lib/createUUID').default;
 const compareVersion = require('../lib/compareVersion').default;
+const is = require('../lib/is');
 
 /// parseURLString
 const result = parseURLString('https://github.com/icepy/used?id=1234#1')
@@ -85,4 +86,10 @@ console.log('oldVersion: 1.0.0 newVersion: 1.0.0', cv1);
 
 const cv2 = compareVersion('1.0.0', '0.0.9');
 console.log('oldVersion: 1.0.0 newVersion: 0.0.9', cv2);
+///
+
+/// is
+
+console.log('empty object', is.emptyObject({}));
+
 ///
