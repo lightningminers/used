@@ -34,7 +34,7 @@ import usedjs from 'usedjs' // 全引用
 import querystring from 'usedjs/lib/querystring' // 仅引用querystring模块
 ```
 
-大部分的模块主要针对`lodash.js`未提供但又常用到的一些函数，并且支持按需载入，个别模块如 `Time` 的使用和 Moment.js 的 API 用法相同， **（与热门库使用体验一致）** 无学习成本。
+大部分的模块主要针对 `lodash.js` 未提供但又常用到的一些函数并且支持按需载入， **（与热门库使用体验一致）** 简单易用无学习成本。
 
 ## API
 
@@ -76,7 +76,7 @@ console.log(_wu)
 ```
 
 ```bash
-$ querystring.parse:  { id: '1234', name: [ '你好', '你好' ] }
+querystring.parse:  { id: '1234', name: [ '你好', '你好' ] }
 ```
 
 - stringify
@@ -93,7 +93,7 @@ console.log(wu)
 ```
 
 ```bash
-$ querystring.stringify:  id=1234&name=你好&name=你好
+querystring.stringify:  id=1234&name=你好&name=你好
 ```
 
 ### url
@@ -114,8 +114,8 @@ console.log(id)
 ```
 
 ```bash
-$ url.parse:  { id: '1234', name: [ '你好', '你好吧' ] }
-$ url.parse id:  1234
+url.parse:  { id: '1234', name: [ '你好', '你好吧' ] }
+url.parse id:  1234
 ```
 
 - format
@@ -152,10 +152,10 @@ log(['info'], LogType.INFO)
 ```
 
 ```bash
-$ time:01:26:15 | log:  123456
-$ time:01:26:15 | error:  error
-$ time:01:26:15 | warning:  waring
-$ time:01:26:15 | info:  info
+time:01:26:15 | log:  123456
+time:01:26:15 | error:  error
+time:01:26:15 | warning:  waring
+time:01:26:15 | info:  info
 ```
 
 ## env
@@ -226,5 +226,31 @@ cookie.remove('name')
 创建一个 uuid：
 
 ```javascript
+const uuid = createUUID();
+console.log('createUUID: ', uuid);
+```
 
+```bash
+createUUID:  49bafb3b-4b3f-0aec-66fc-1b13479720a4
+```
+
+### compareVersion
+
+版本对比 x.y.z ，旧版本和新版本比对的逻辑是 大于或等于为 true。
+
+```javascript
+const cv = compareVersion('1.0.0', '1.0.1');
+console.log('oldVersion: 1.0.0 newVersion: 1.0.1', cv);
+
+const cv1 = compareVersion('1.0.0', '1.0.0');
+console.log('oldVersion: 1.0.0 newVersion: 1.0.0', cv1);
+
+const cv2 = compareVersion('1.0.0', '0.0.9');
+console.log('oldVersion: 1.0.0 newVersion: 0.0.9', cv2);
+```
+
+```bash
+oldVersion: 1.0.0 newVersion: 1.0.1 true
+oldVersion: 1.0.0 newVersion: 1.0.0 true
+oldVersion: 1.0.0 newVersion: 0.0.9 false
 ```

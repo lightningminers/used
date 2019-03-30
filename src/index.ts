@@ -5,6 +5,7 @@ import * as cookie from './cookie';
 import * as env from './env';
 import parseURLString from './parseURLString';
 import createUUID from './createUUID';
+import compareVersion from './compareVersion';
 
 export default {
   url,
@@ -13,5 +14,6 @@ export default {
   cookie,
   env,
   parseURLString,
-  createUUID
+  createUUID,
+  compareVersion
 }
