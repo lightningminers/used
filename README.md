@@ -134,28 +134,30 @@ console.log(_websiteUrl)
 url.format:  https://github.com/icepy?id=1234&name=你好
 ```
 
-### log
+### loggers
 
-良好的日志系统可以在排错方面给予效率，`log`提供了良好的区分以及格式化输出。
+良好的日志系统可以在排错方面给予效率，`loggers`提供了良好的区分以及格式化输出。
 
-- `log` 函数
-- `LogType` 常量定义了LOG ERROR WARNING INFO 四个等级
+- `logger` 函数
+- `LoggerType` 常量定义了LOG ERROR WARNING INFO DIR TABLE 六个等级
 
 ```javascript
-const log = logger.log
-const LogType = logger.LogType;
+const loggers = require('../lib/index');
+const logger = loggers.default;
+const LoggerType = loggers.LoggerType;
 
-log(['123456'])
-log(['error'], LogType.ERROR)
-log(['waring'], LogType.WARNING)
-log(['info'], LogType.INFO)
-```
+logger('default log');
+logger({ default: 'log'});
+logger(['default', 'log']);
+logger([{ default: 'log', name: 'icepy'}], LoggerType.TABLE);
 
-```bash
-time:01:26:15 | log:  123456
-time:01:26:15 | error:  error
-time:01:26:15 | warning:  waring
-time:01:26:15 | info:  info
+loggers.dir(document.querySelector('body'));
+loggers.info('default log');
+loggers.warning('default log');
+loggers.error('default log');
+loggers.table(['default', 'log']);
+loggers.table({ default: 'log', name: 'icepy'});
+loggers.table([{ default: 'log', name: 'icepy'}], ['name']);
 ```
 
 ## env

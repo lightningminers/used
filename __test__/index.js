@@ -1,12 +1,12 @@
 const parseURLString = require('../lib/parseURLString').default;
 const querystring = require('../lib/querystring');
 const url = require('../lib/url');
-const logger = require('../lib/log');
 const env = require('../lib/env');
 const cookie = require('../lib/cookie');
 const createUUID = require('../lib/createUUID').default;
 const compareVersion = require('../lib/compareVersion').default;
 const is = require('../lib/is');
+const loggers = require('../lib/loggers');
 
 /// parseURLString
 const result = parseURLString('https://github.com/icepy/used?id=1234#1')
@@ -41,14 +41,21 @@ const _websiteUrl = url.format('https://github.com/icepy',{
 console.log('url.format: ', _websiteUrl)
 ///
 
-/// log
-const log = logger.log
-const LogType = logger.LogType;
+/// loggers
 
-log(['123456'])
-log(['error'], LogType.ERROR)
-log(['waring'], LogType.WARNING)
-log(['info'], LogType.INFO)
+const logger = loggers.default;
+const LoggerType = loggers.LoggerType;
+logger('default log');
+logger({ default: 'log'});
+logger(['default', 'log']);
+logger([{ default: 'log', name: 'icepy'}], LoggerType.TABLE);
+
+loggers.info('default log');
+loggers.warning('default log');
+loggers.error('default log');
+loggers.table(['default', 'log']);
+loggers.table({ default: 'log', name: 'icepy'});
+loggers.table([{ default: 'log', name: 'icepy'}], ['name']);
 ///
 
 /// env

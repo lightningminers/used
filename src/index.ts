@@ -1,6 +1,6 @@
 import * as url from './url';
 import * as querystring from './querystring';
-import * as log from './log';
+import * as loggers from './loggers';
 import * as cookie from './cookie';
 import * as env from './env';
 import parseURLString from './parseURLString';
@@ -10,7 +10,7 @@ import compareVersion from './compareVersion';
 export default {
   url,
   querystring,
-  log,
+  loggers,
   cookie,
   env,
   parseURLString,
