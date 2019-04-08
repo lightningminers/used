@@ -72,7 +72,7 @@ const channel = (message: any, type = LoggerType.INFO, options?: string[]) => {
     func({
       type,
       timeTag,
-      message: [message],
+      message,
       options,
     });
   } else if (type === LoggerType.DIR) {
